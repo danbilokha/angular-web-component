@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Test Web Component</title>
+  </head>
+  <body>
+    <test-element></test-element>
+    <script src="http://localhost:4200/runtime.js" type="module"></script>
+    <script src="http://localhost:4200/polyfills.js" type="module"></script>
+    <script src="http://localhost:4200/styles.js" defer></script>
+    <script src="http://localhost:4200/vendor.js" type="module"></script>
+    <script src="http://localhost:4200/main.js" type="module"></script>
+
+    <div class="fireworks-container" style="height: 100px; width: 100px"></div>
+    <!-- unpkg -->
+    <script src="https://unpkg.com/fireworks-js@latest/dist/fireworks.js"></script>
+
+    <script>
+      const container = document.querySelector(".fireworks-container");
+      console.log("container", container);
+      const fireworks = new Fireworks(container, { speed: 3 });
+
+      fireworks.start();
+      console.log(fireworks);
+
+      fireworks.setOptions({ delay: { min: 0, max: 15 } });
+    </script>
+  </body>
+</html>
